@@ -5,7 +5,6 @@ import java.security.MessageDigest;
 /***
  * Don’t worry too much if you don’t understand the contents of this helper method, 
  * </p>All you need to know is that it takes a string and applies SHA256 algorithm to it, and returns the generated signature as a string.
- * @author IS96811
  *
  */
 public class StringUtil {

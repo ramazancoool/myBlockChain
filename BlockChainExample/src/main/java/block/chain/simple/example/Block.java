@@ -6,7 +6,6 @@ import java.util.Date;
  * </p>Some miners may even try random numbers for nonce. 
  * </p>Also it’s worth noting that at the harder difficulties solutions may require more than integer.MAX_VALUE, 
  * </p>miners can then try changing the timestamp.
- * @author IS96811
  *
  */
 public class Block {
