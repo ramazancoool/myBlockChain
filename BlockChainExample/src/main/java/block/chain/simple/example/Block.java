@@ -11,8 +11,8 @@ import java.util.Date;
  */
 public class Block {
 
-	public String hash;
-	public String previousHash;
+	private String hash;
+	private String previousHash;
 	private String data; //our data will be a simple message.
 	private long timeStamp; //as number of milliseconds since 1/1/1970.
 	private int nonce = 0;
@@ -43,5 +43,13 @@ public class Block {
 			hash = calculateHash();
 		}
 		System.out.println("Block Mined!!! : " + hash);
+	}
+
+	public String getHash() {
+		return hash;
+	}
+
+	public String getPreviousHash() {
+		return previousHash;
 	}
 }

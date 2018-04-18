@@ -20,25 +20,8 @@ public class MyChain3 {
 			System.out.println("Trying to Mine block " + i + " ... ");
 			block.mineBlock(difficulty);
 			
-			previousHash = block.hash;
+			previousHash = block.getHash();
 		}
-		
-//		int index = 0;
-//		blockchain.add(new Block("Hi im the first block", "0"));
-//		System.out.println("Trying to Mine block 1... ");
-//		blockchain.get(index++).mineBlock(difficulty);
-//		
-//		blockchain.add(new Block("Yo im the second block", blockchain.get(blockchain.size()-1).hash));
-//		System.out.println("Trying to Mine block 2... ");
-//		blockchain.get(index++).mineBlock(difficulty);
-//		
-//		blockchain.add(new Block("Hey im the third block", blockchain.get(blockchain.size()-1).hash));
-//		System.out.println("Trying to Mine block 3... ");
-//		blockchain.get(index++).mineBlock(difficulty);	
-//		
-//		blockchain.add(new Block("Ramazan's Block",blockchain.get(blockchain.size()-1).hash));
-//		System.out.println("Trying to Mine block 4... ");
-//		blockchain.get(index++).mineBlock(difficulty);	
 		
 		System.out.println("\nBlockchain is Valid: " + isChainValid());
 		
@@ -57,17 +40,17 @@ public class MyChain3 {
 			currentBlock = blockchain.get(i);
 			previousBlock = blockchain.get(i-1);
 			//compare registered hash and calculated hash:
-			if(!currentBlock.hash.equals(currentBlock.calculateHash()) ){
+			if(!currentBlock.getHash().equals(currentBlock.calculateHash()) ){
 				System.out.println("Current Hashes not equal");			
 				return false;
 			}
 			//compare previous hash and registered previous hash
-			if(!previousBlock.hash.equals(currentBlock.previousHash) ) {
+			if(!previousBlock.getHash().equals(currentBlock.getPreviousHash()) ) {
 				System.out.println("Previous Hashes not equal");
 				return false;
 			}
 			//check if hash is solved
-			if(!currentBlock.hash.substring( 0, difficulty).equals(hashTarget)) {
+			if(!currentBlock.getHash().substring( 0, difficulty).equals(hashTarget)) {
 				System.out.println("This block hasn't been mined");
 				return false;
 			}
